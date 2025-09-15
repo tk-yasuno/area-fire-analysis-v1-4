@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-09-15T10:35:25.087363",
+  "region": "South America",
+  "total_samples": 15000,
+  "clustering": {
+    "quality_score": 0.6981519465900825,
+    "selected_method": "FAISS k-means",
+    "method_reason": "k-means selected: large dataset optimization (15000 samples)",
+    "n_clusters": 12,
+    "noise_ratio": 0.0
+  },
+  "feature_analysis_summary": {
+    "total_clusters": 0,
+    "geographic_distribution": 0,
+    "temporal_patterns": 0
+  },
+  "config_used": "config_south_america_firms.json"
+}
