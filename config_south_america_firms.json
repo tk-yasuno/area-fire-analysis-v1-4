@@ -1,0 +1,75 @@
+{
+  "adaptive_clustering": {
+    "output_dir": "data_firms_south_america",
+    "quality_thresholds": {
+      "min_cluster_quality": 0.25,
+      "max_noise_ratio": 0.9
+    },
+    "quality_weights": {
+      "silhouette": 0.3,
+      "calinski_harabasz": 0.2,
+      "davies_bouldin": 0.2,
+      "noise_penalty": 0.2,
+      "cluster_balance": 0.1
+    },
+    "hdbscan_params": {
+      "min_cluster_size": 50,
+      "min_samples": 25
+    },
+    "kmeans_params": {
+      "n_clusters": 12
+    }
+  },
+  "nasa_firms": {
+    "data_source": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/",
+    "map_key": "39f8ac8dee9239a915de4e8bb0fe689a",
+    "area_params": {
+      "south": -56.0,
+      "north": 15.0,
+      "west": -82.0,
+      "east": -35.0
+    },
+    "satellite": "VIIRS_SNPP_NRT",
+    "days_back": 10,
+    "confidence_threshold": 50
+  },
+  "processing": {
+    "max_samples": 15000,
+    "batch_size": 100,
+    "sample_limit": null
+  },
+  "visualization": {
+    "figsize": [16, 12],
+    "dpi": 100,
+    "save_formats": ["png", "pdf"]
+  },
+  "embedding": {
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "device": "auto",
+    "batch_size": 64
+  },
+  "clustering": {
+    "method": "adaptive",
+    "adaptive_threshold": 3000,
+    "hdbscan_min_cluster_size": 50,
+    "kmeans_n_clusters": 12
+  },
+  "output": {
+    "timestamp_format": "%Y%m%d%H%M"
+  },
+  "region": "south_america",
+  "output_dir": "data_firms_south_america",
+  "report": {
+    "title": "South America Fire Detection Analysis Report",
+    "region_name": "South America",
+    "description": "Comprehensive fire detection analysis covering Chile, Argentina, Brazil, Peru, Colombia, and surrounding areas",
+    "focus_country": "Chile",
+    "geographic_highlights": [
+      "Chilean Patagonia and central valley regions",
+      "Amazon rainforest (northern regions)",
+      "Argentine pampas and Patagonia",
+      "Brazilian cerrado and Atlantic forest",
+      "Andean mountain ranges"
+    ]
+  }
+}
